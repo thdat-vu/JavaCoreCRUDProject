@@ -35,9 +35,4 @@ public class Order {
         this.detailMap = detailMap;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" + "orderHeader=" + orderHeader + ", detailMap=" + detailMap + '}';
-    }
-    
 }

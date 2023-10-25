@@ -44,10 +44,4 @@ public class OrderDetail {
     public void setCost(long cost) {
         this.cost = cost;
     }
-
-    @Override
-    public String toString() {
-        return "OrderDetail{" + "OrderDetailID=" + OrderDetailID + ", flowerID=" + flowerID + ", quantity=" + quantity + ", cost=" + cost + '}';
-    }
-    
 }

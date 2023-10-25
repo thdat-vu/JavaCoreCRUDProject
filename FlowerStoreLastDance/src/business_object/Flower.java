@@ -15,17 +15,15 @@ public class Flower implements Comparable<Flower>{
     private String id;
     private String description;
     private LocalDate importDate;
-    private int unitPrice;
     private String category;
-    
+
     public Flower(){
     }
 
-    public Flower(String id, String description, LocalDate importDate, int unitPrice, String category) {
+    public Flower(String id, String description, LocalDate importDate, String category) {
         this.id = id;
         this.description = description;
         this.importDate = importDate;
-        this.unitPrice = unitPrice;
         this.category = category;
     }
 
@@ -53,14 +51,6 @@ public class Flower implements Comparable<Flower>{
         this.importDate = importDate;
     }
 
-    public int getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(int unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -69,11 +59,9 @@ public class Flower implements Comparable<Flower>{
         this.category = category;
     }
 
-    
-
     @Override
     public String toString() {
-        return String.format("%s,%s,%s,%s",this.getId(), this.getDescription(),this.getImportDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),this.getUnitPrice(), this.getCategory());
+        return String.format("%s,%s,%s,%s",this.getId(), this.getDescription(),this.getImportDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),this.getDescription());
     }
 
     @Override

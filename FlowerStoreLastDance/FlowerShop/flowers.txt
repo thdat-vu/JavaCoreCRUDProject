@@ -1,0 +1,13 @@
+F0001,Rose,12/01/2023,10000,rosa
+F0002,Lily,13/01/2023,8000,lilium
+F0003,Tulip,24/01/2023,7000,tulipa
+F0004,Orchid,23/02/2023,6000,phalaenopsis
+F0005,Broom,23/04/2023,15000,dianthus
+F0006,Daisy,23/02/2023,7000,rosa
+F0007,Lotus,24/04/2023,9000,rosa
+F0008,Lupin,01/05/2023,6000,tulipa
+F0009,Pansy,07/06/2023,4000,lilium
+F0010,Poppy,01/03/2023,4000,dianthus
+F0012,Stock,23/04/2023,4500,sahara
+F0023,Viola,09/12/2023,560,plant
+F1001,blossom,16/06/2023,750,spring

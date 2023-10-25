@@ -65,7 +65,7 @@ public class FlowerDAO implements IFlowerDao{
                 while (r.ready()) {
                     String s = r.readLine();
                     String[] arr = s.split(",");
-                    Flower flower = new Flower(arr[0].trim(), arr[1].trim(), LocalDate.parse(arr[2].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy")), Integer.parseInt(arr[3]), arr[4].trim());
+                    Flower flower = new Flower(arr[0].trim(), arr[1].trim(), LocalDate.parse(arr[2].trim(), DateTimeFormatter.ofPattern("dd/MM/yyyy")), arr[3].trim());
                     flowerSet.add(flower);
                 }
             } catch (IOException e) {
@@ -95,7 +95,6 @@ public class FlowerDAO implements IFlowerDao{
         String descript;
         LocalDate impDate;
         String catergory;
-        int unitprice;
         boolean cont = false;
         do {
             flowerid = Utils.getStringreg("Input new Flower's ID(Fxxx(x is a number) - for example: F0001): ", "^F\\d{4}", "Cannot be empty", "Wrong format ID");
@@ -110,10 +109,9 @@ public class FlowerDAO implements IFlowerDao{
 
         descript = Utils.getStringreg("Input the description: ", ".{3,50}", "Cannot be empty", "Wrong format! Must contain 3 to 50 characters");
         impDate = Utils.getDate("Input the import date", "It must follow the pattern: (dd/MM/yyyy)");
-        unitprice = Utils.getInt("Enter the unit price($): ", 0);
         catergory = Utils.getString("Input the category: ", "Cannot be empty");
-        Flower newFlower = new Flower(flowerid, descript, impDate, unitprice, catergory);
-        
+
+        Flower newFlower = new Flower(flowerid,descript, impDate,catergory);
         flowerSet.add(newFlower);
         System.out.println("Adding the new Flower successfully.");
     }
@@ -129,7 +127,7 @@ public class FlowerDAO implements IFlowerDao{
         }
         else{
             for (Flower flower : flowerSet) {
-                if (flower.getId().equals(data)||flower.getCategory().contains(data)) {
+                if (flower.getId().equals(data)) {
                     result = flower;
                     System.out.println(flower);
                     break;
@@ -220,7 +218,7 @@ public class FlowerDAO implements IFlowerDao{
         }
     }
 
-    public static Flower getFlower(String data){
+    public Flower getFlower(String data){
         Flower result = null;
         for (Flower flower : flowerSet) {
             if (flower.getId().equalsIgnoreCase(data)) {

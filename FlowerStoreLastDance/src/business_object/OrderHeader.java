@@ -37,10 +37,4 @@ public class OrderHeader {
         this.customerName = customerName;
     }
 
-    @Override
-    public String toString() {
-        return "OrderHeader{" + "order_id=" + order_id + ", orderDate=" + orderDate + ", customerName=" + customerName + '}';
-    }
-
-    
 }
